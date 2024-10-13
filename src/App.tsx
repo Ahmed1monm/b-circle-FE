@@ -1,17 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Navbar from "./components/Navbar";
+import { ThemeProvider } from "./theme-provider";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div className="text-lg font-bold text-center">
-        Hello
-      </div>
-    </>
-  )
+    <ThemeProvider>
+      <Navbar />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
