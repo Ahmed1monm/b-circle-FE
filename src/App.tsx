@@ -1,11 +1,19 @@
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import { ThemeProvider } from "./theme-provider";
+import Home from "./pages/home";
+import Circles from "./pages/circles";
 
 function App() {
   return (
-    <ThemeProvider>
+    <div className="App">
       <Navbar />
-    </ThemeProvider>
+      <div className="container mx-auto mt-16 h-screen p-6">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/circles" element={<Circles />} />
+        </Routes>
+      </div>
+    </div>
   );
 }
 

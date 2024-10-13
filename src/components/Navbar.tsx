@@ -17,16 +17,17 @@ export default function Navbar() {
         scrollTop && "shadow-sm border-b"
       )}
     >
-      <Logo />
-      <div className="md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-6 w-full">
-        <Link to="/" className="text-lg font-semibold">
+      <Link to="/" className="text-lg font-semibold">
+        <Logo />
+      </Link>
+      <div className="md:ml-auto justify-end flex items-center gap-x-6 w-full">
+        <Link to="/circles" className="text-lg font-semibold">
           Circles
         </Link>
-        <Link to="/about" className="text-lg font-semibold">
+        <Link to="/" className="text-lg font-semibold">
           Articles
         </Link>
-       
-       
+
         <ModeToggle />
       </div>
     </nav>
