@@ -1,14 +1,10 @@
-import * as React from "react";
-import { Menu, Search } from "lucide-react";
 import { Link } from "react-router-dom";
-import Logo from "./Logo";
+import Logo from "./logo";
 import { useScrollTop } from "@/hooks/use-scroll-top";
 import { ModeToggle } from "./mode-toggle";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
-  const [state, setState] = React.useState(false);
-
   const scrollTop = useScrollTop();
   return (
     <nav
