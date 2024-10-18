@@ -21,7 +21,7 @@ export default function Navbar() {
           Circles
         </Link>
         <Link to="/" className="text-lg font-semibold">
-          Articles
+          Blogs
         </Link>
 
         <ModeToggle />
