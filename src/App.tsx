@@ -3,6 +3,7 @@ import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import Circles from "./pages/circles";
 import { Toaster } from "sonner";
+import Circle from "./pages/circle";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/circles" element={<Circles />} />
+          <Route path="/circles/:circleId" element={<Circle />} />
         </Routes>
       </div>
       <Toaster />
