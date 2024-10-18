@@ -1,23 +1,17 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import client from "@/lib/client";
 
+const createCircle = async (circleData: any) => {
+  const { data } = await client.post("/circle", circleData);
+  return data;
+}
 export const useCreateCircle = () => {
   const queryClient = useQueryClient();
 
   return useMutation({
-    mutationFn: async (circleData: any) => {
-      const res = await fetch(`${process.env.BASE_URL}/circles`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(circleData),
-      });
-
-      const result = await res.json();
-      return result;
-    },
+    mutationFn: createCircle,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["circles"] });
+      queryClient.invalidateQueries({ queryKey: ["circle"] });
     },
   });
 };
