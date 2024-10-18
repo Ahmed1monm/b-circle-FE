@@ -1,17 +1,18 @@
 import { ArrowRight } from "lucide-react";
-import React from "react";
+import { Link } from "react-router-dom";
 
 function CircleList({ circles }: any) {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
       {circles?.map((circle: any) => (
+        <Link to={`/circles/${circle.id}`} key={circle.id}>
         <div
-          key={circle.id}
-          className="text-lg font-semibold border p-4 rounded-md flex items-center justify-between"
+          className="text-lg font-semibold border p-4 rounded-md flex items-center justify-between hover:ring-1 hover:ring-primary/50 transition-all duration-500 group"
         >
           {circle.name}
-          <ArrowRight />
+          <ArrowRight className="group-hover:text-primary text-primary/50 transition" />
         </div>
+      </Link>
       ))}
     </div>
   );
