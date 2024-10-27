@@ -4,6 +4,7 @@ import Home from "./pages/home";
 import Circles from "./pages/circles";
 import { Toaster } from "sonner";
 import Circle from "./pages/circle";
+import NewBlog from "./pages/new-blog";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/circles" element={<Circles />} />
           <Route path="/circles/:circleId" element={<Circle />} />
+          <Route path="/blogs/new" element={<NewBlog />} />
         </Routes>
       </div>
       <Toaster />
